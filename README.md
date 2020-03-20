@@ -1,5 +1,7 @@
 # covid-19-tracker-lao
 
+COVID-19 Tracker in Lao language
+
 ## Project setup
 ```
 yarn install
