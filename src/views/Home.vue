@@ -6,15 +6,16 @@
           <h1 class="title">
             ຂໍ້ມູນການແພ່ລະບາດຂອງໂຣກປອດອັກເສບໄວຣັສໂຄໂຣນາສາຍພັນໃໝ່ COVID-19
           </h1>
+          <p class="subtitle">
+            ຂໍ້ມູນທາງສະຖິຕິຕໍ່ໄປນີ້ແມ່ນໄດ້ຮັບມາຈາກ API ຂອງທາງ
+            <a href="https://github.com/javieraviles/covidAPI"
+              >https://github.com/javieraviles/covidAPI</a
+            >
+          </p>
         </div>
       </div>
     </section>
-    <p>
-      ຂໍ້ມູນທາງສະຖິຕິຕໍ່ໄປນີ້ແມ່ນໄດ້ຮັບມາຈາກ API ຂອງທາງ
-      <a href="https://github.com/javieraviles/covidAPI"
-        >https://github.com/javieraviles/covidAPI</a
-      >
-    </p>
+
     <b-table
       :data="covid19"
       :columns="col"
@@ -30,6 +31,9 @@
 
 export default {
   name: "Home",
+  metaInfo: {
+    title: "ໜ້າຫຼັກ"
+  },
   data: () => {
     return {
       covid19: [],
