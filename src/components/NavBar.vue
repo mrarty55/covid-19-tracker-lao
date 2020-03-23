@@ -6,10 +6,10 @@
       </b-navbar-item>
     </template>
     <template slot="start">
-      <b-navbar-item href="#">
+      <b-navbar-item tag="router-link" :to="{ path: '/what-is-covid-19' }">
         <span>COVID-19 ແມ່ນຫຍັງ?</span>
       </b-navbar-item>
-      <b-navbar-item href="#">
+      <b-navbar-item tag="router-link" :to="{ path: '/covid-19-prevention' }">
         <span>ວິທີປ້ອງກັນ COVID-19</span>
       </b-navbar-item>
     </template>
