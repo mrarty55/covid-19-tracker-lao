@@ -19,7 +19,7 @@
     <b-table
       :data="covid19"
       :columns="col"
-      :default-sort="['country', 'asc']"
+      :default-sort="['cases', 'desc']"
       sticky-header
       height="100vh"
     ></b-table>
@@ -50,7 +50,7 @@ export default {
         },
         {
           field: "todayCases",
-          label: "ກວດພົບມື້ນີ້",
+          label: "ກວດພົບຫຼ້າສຸດ",
           sortable: true
         },
         {
@@ -60,7 +60,7 @@ export default {
         },
         {
           field: "todayDeaths",
-          label: "ເສຍຊີວິດມື້ນີ້",
+          label: "ເສຍຊີວິດຫຼ້າສຸດ",
           sortable: true
         },
         {
