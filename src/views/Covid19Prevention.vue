@@ -26,6 +26,60 @@
 <script>
 export default {
   name: "Covid19Prevention",
-  metaInfo: { title: "ວິທີການປ້ອງກັນ COVID-19 ເບື້ອງຕົ້ນ" }
+  metaInfo: {
+    title: "ວິທີການປ້ອງກັນ COVID-19 ເບື້ອງຕົ້ນ",
+    meta: [
+      {
+        name: "title",
+        content: "ວິທີການປ້ອງກັນ COVID-19 ເບື້ອງຕົ້ນ"
+      },
+      {
+        name: "description",
+        content: "ວີທີການປ້ອງກັນ COVID-19 ເບື້ອງຕົ້ນ"
+      },
+      {
+        name: "og:type",
+        content: "website"
+      },
+      {
+        name: "og:title",
+        content:
+          "ວິທີການປ້ອງກັນ COVID-19 ເບື້ອງຕົ້ນ - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
+      },
+      {
+        name: "og:description",
+        content: "ວິທີການປ້ອງກັນ COVID-19 ເບື້ອງຕົ້ນ"
+      },
+      {
+        name: "og:url",
+        content: "https://covid19tracker.artyboy.dev/covid-19-prevention"
+      },
+      {
+        name: "org:image",
+        content: "https://covid19tracker.artyboy.dev/covid19.webp"
+      },
+      {
+        name: "twitter:card",
+        content: "summary"
+      },
+      {
+        name: "twitter:title",
+        content:
+          "ວິທີການປ້ອງກັນ COVID-19 ເບື້ອງຕົ້ນ - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
+      },
+      {
+        name: "twitter:description",
+        content: "ວິທີການປ້ອງກັນ COVID-19 ເບື້ອງຕົ້ນ"
+      },
+      {
+        name: "twitter:url",
+        content: "https://covid19tracker.artyboy.dev/covid-19-prevention"
+      },
+      {
+        name: "twitter:image",
+        content: "https://covid19tracker.artyboy.dev/covid19.webp"
+      }
+    ]
+  }
 };
 </script>

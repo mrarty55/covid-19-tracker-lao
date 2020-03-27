@@ -12,7 +12,17 @@ export default {
     NavBar
   },
   metaInfo: {
-    titleTemplate: "%s - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
+    titleTemplate: "%s - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19",
+    meta: [
+      {
+        name: "author",
+        content: "Philaphonh Inthavongsa"
+      },
+      {
+        name: "keywords",
+        content: "COVID-19, Coronavirus, ໂຄວິດ-19, ໄວຣັສໂຄໂຣນາ"
+      }
+    ]
   }
 };
 </script>

@@ -20,6 +20,11 @@ const routes = [
     path: "/covid-19-prevention",
     name: "COVID-19 Prevention",
     component: () => import("../views/Covid19Prevention.vue")
+  },
+  {
+    path: "*",
+    name: "Not Found",
+    component: () => import("../views/404.vue")
   }
 ];
 

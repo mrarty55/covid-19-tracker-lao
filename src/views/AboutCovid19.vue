@@ -32,7 +32,57 @@
 export default {
   name: "WhatIsCovid19",
   metaInfo: {
-    title: "COVID-19 ແມ່ນຫຍັງ?"
+    title: "COVID-19 ແມ່ນຫຍັງ?",
+    meta: [
+      {
+        meta: "title",
+        content: "COVID-19 ແມ່ນຫຍັງ?"
+      },
+      {
+        name: "description",
+        content: "ຂໍ້ມູນເບື້ອງຕົ້ນກ່ຽວກັບ COVID-19"
+      },
+      {
+        name: "og:type",
+        content: "website"
+      },
+      {
+        name: "og:title",
+        content: "COVID-19 ແມ່ນຫຍັງ? - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
+      },
+      {
+        name: "og:description",
+        content: "ຂໍ້ມູນເບື້ອງຕົ້ນກ່ຽວກັບ COVID-19"
+      },
+      {
+        name: "og:url",
+        content: "https://covid19tracker.artyboy.dev/what-is-covid-19"
+      },
+      {
+        name: "org:image",
+        content: "https://covid19tracker.artyboy.dev/covid19.webp"
+      },
+      {
+        name: "twitter:card",
+        content: "summary"
+      },
+      {
+        name: "twitter:title",
+        content: "COVID-19 ແມ່ນຫຍັງ? - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
+      },
+      {
+        name: "twitter:description",
+        content: "ຂໍ້ມູນເບື້ອງຕົ້ນກ່ຽວກັບ COVID-19"
+      },
+      {
+        name: "twitter:url",
+        content: "https://covid19tracker.artyboy.dev/what-is-covid-19"
+      },
+      {
+        name: "twitter:image",
+        content: "https://covid19tracker.artyboy.dev/covid19.webp"
+      }
+    ]
   }
 };
 </script>

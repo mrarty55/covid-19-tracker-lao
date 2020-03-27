@@ -57,7 +57,57 @@
 export default {
   name: "Home",
   metaInfo: {
-    title: "ໜ້າຫຼັກ"
+    title: "ໜ້າຫຼັກ",
+    meta: [
+      {
+        name: "title",
+        content: "ໜ້າຫຼັກ - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
+      },
+      {
+        name: "description",
+        content: "ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19 ພາສາລາວແບບບໍ່ເປັນທາງການ"
+      },
+      {
+        name: "og:type",
+        content: "website"
+      },
+      {
+        name: "og:title",
+        content: "ໜ້າຫຼັກ - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
+      },
+      {
+        name: "og:description",
+        content: "ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19 ພາສາລາວແບບບໍ່ເປັນທາງການ"
+      },
+      {
+        name: "og:url",
+        content: "https://covid19tracker.artyboy.dev"
+      },
+      {
+        name: "org:image",
+        content: "https://covid19tracker.artyboy.dev/covid19.webp"
+      },
+      {
+        name: "twitter:card",
+        content: "summary"
+      },
+      {
+        name: "twitter:title",
+        content: "ໜ້າຫຼັກ - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
+      },
+      {
+        name: "twitter:description",
+        content: "ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19 ພາສາລາວແບບບໍ່ເປັນທາງການ"
+      },
+      {
+        name: "twitter:url",
+        content: "https://covid19tracker.artyboy.dev"
+      },
+      {
+        name: "twitter:image",
+        content: "https://covid19tracker.artyboy.dev/covid19.webp"
+      }
+    ]
   },
   data: () => {
     return {
