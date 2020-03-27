@@ -8,7 +8,9 @@ import Buefy from "buefy";
 import "@fortawesome/fontawesome-free/js/all";
 
 Vue.use(VueAxios, Axios);
-Vue.use(VueMeta);
+Vue.use(VueMeta, {
+  refreshOnceOnNavigation: true
+});
 Vue.use(Buefy, {
   defaultIconPack: "fas"
 });
