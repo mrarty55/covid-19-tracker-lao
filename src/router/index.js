@@ -1,9 +1,12 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-
+import VueMeta from "vue-meta";
 import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
+Vue.use(VueMeta, {
+  refreshOnceOnNavigation: true
+});
 
 const routes = [
   {
