@@ -5,10 +5,13 @@ import Axios from "axios";
 import VueAxios from "vue-axios";
 import VueMeta from "vue-meta";
 import Buefy from "buefy";
+import "@fortawesome/fontawesome-free/js/all";
 
 Vue.use(VueAxios, Axios);
 Vue.use(VueMeta);
-Vue.use(Buefy);
+Vue.use(Buefy, {
+  defaultIconPack: "fas"
+});
 
 Vue.config.productionTip = false;
 

@@ -4,21 +4,46 @@
       <div class="hero-body">
         <div class="container has-text-centered">
           <h1 class="title">
-            ຂໍ້ມູນການແພ່ລະບາດຂອງໂຣກປອດອັກເສບໄວຣັສໂຄໂຣນາສາຍພັນໃໝ່ COVID-19
+            ຂໍ້ມູນການແພ່ລະບາດຂອງໂຣກຕິດເຊື້ອໄວຣັສໂຄໂຣນາສາຍພັນໃໝ່ 2019
           </h1>
           <p class="subtitle">
             ຂໍ້ມູນທາງສະຖິຕິຕໍ່ໄປນີ້ແມ່ນໄດ້ຮັບມາຈາກ API ຂອງທາງ
-            <a href="https://github.com/javieraviles/covidAPI"
-              >https://github.com/javieraviles/covidAPI</a
+            <a href="https://github.com/NovelCOVID/API"
+              >github.com/NovelCOVID/API</a
             >
           </p>
         </div>
       </div>
     </section>
-
+    <section class="columns">
+      <div class="column">
+        <div class="notification is-warning">
+          <h3 class="title"><b-icon icon="virus"></b-icon> ກວດພົບ</h3>
+          <p>ທົ່ວໂລກ: {{ overall.cases }} ຄົນ</p>
+          <p>ປະເທດລາວ: {{ laos.cases }} ຄົນ</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="notification is-danger">
+          <h3 class="title">
+            <b-icon icon="skull-crossbones"></b-icon> ເສຍຊີວິດ
+          </h3>
+          <p>ທົ່ວໂລກ: {{ overall.deaths }} ຄົນ</p>
+          <p>ປະເທດລາວ: {{ laos.deaths }} ຄົນ</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="notification is-success">
+          <h3 class="title"><b-icon icon="smile"></b-icon> ຮັກສາແລ້ວ</h3>
+          <p>ທົ່ວໂລກ: {{ overall.recovered }} ຄົນ</p>
+          <p>ປະເທດລາວ: {{ laos.recovered }} ຄົນ</p>
+        </div>
+      </div>
+    </section>
+    <hr />
     <b-table
-      :data="covid19"
-      :columns="col"
+      :data="allCountries"
+      :columns="tableColumn"
       :default-sort="['cases', 'desc']"
       sticky-header
       height="100vh"
@@ -36,12 +61,15 @@ export default {
   },
   data: () => {
     return {
-      covid19: [],
-      col: [
+      allCountries: [],
+      laos: [],
+      overall: [],
+      tableColumn: [
         {
           field: "country",
           label: "ປະເທດ",
-          sortable: true
+          sortable: true,
+          width: 250
         },
         {
           field: "cases",
@@ -82,14 +110,32 @@ export default {
     };
   },
   created: function() {
-    this.getData();
+    this.getAllCountriesData();
+    this.getLaosData();
+    this.getOverallData();
   },
   methods: {
-    getData() {
+    getAllCountriesData() {
       this.$http
-        .get("https://coronavirus-19-api.herokuapp.com/countries")
+        .get("https://corona.lmao.ninja/countries")
         .then(res => {
-          this.covid19 = res.data;
+          this.allCountries = res.data;
+        })
+        .catch(err => console.error(err));
+    },
+    getLaosData() {
+      this.$http
+        .get("https://corona.lmao.ninja/countries/lao")
+        .then(res => {
+          this.laos = res.data;
+        })
+        .catch(err => console.error(err));
+    },
+    getOverallData() {
+      this.$http
+        .get("https://corona.lmao.ninja/all")
+        .then(res => {
+          this.overall = res.data;
         })
         .catch(err => console.error(err));
     }

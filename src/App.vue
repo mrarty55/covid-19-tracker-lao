@@ -12,7 +12,7 @@ export default {
     NavBar
   },
   metaInfo: {
-    titleTemplate: "%s - COVID-19 Tracker for Laotian"
+    titleTemplate: "%s - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
   }
 };
 </script>
