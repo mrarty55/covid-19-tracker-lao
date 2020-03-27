@@ -12,6 +12,12 @@
       <b-navbar-item tag="router-link" :to="{ path: '/covid-19-prevention' }">
         <span>ວິທີປ້ອງກັນ COVID-19</span>
       </b-navbar-item>
+      <b-navbar-dropdown label="ເວັບໄຊທີ່ກ່ຽວຂ້ອງ">
+        <b-navbar-item href="https://www.moh.gov.la/"
+          >ກະຊວງສາທາລະນະສຸກ</b-navbar-item
+        >
+        <b-navbar-item href="https://who.int">ອົງການອະນາໄມໂລກ</b-navbar-item>
+      </b-navbar-dropdown>
     </template>
   </b-navbar>
 </template>
