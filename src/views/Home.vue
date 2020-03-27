@@ -60,51 +60,73 @@ export default {
     title: "ໜ້າຫຼັກ",
     meta: [
       {
+        vmid: "title",
         name: "title",
         content: "ໜ້າຫຼັກ - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
       },
       {
+        vmid: "description",
         name: "description",
         content: "ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19 ພາສາລາວແບບບໍ່ເປັນທາງການ"
       },
       {
+        vmid: "og:type",
         name: "og:type",
+        property: "og:type",
         content: "website"
       },
       {
+        vmid: "og:title",
         name: "og:title",
+        property: "og:title",
         content: "ໜ້າຫຼັກ - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
       },
       {
+        vmid: "og:description",
         name: "og:description",
+        property: "og:description",
         content: "ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19 ພາສາລາວແບບບໍ່ເປັນທາງການ"
       },
       {
+        vmid: "og:url",
         name: "og:url",
+        property: "og:url",
         content: "https://covid19tracker.artyboy.dev"
       },
       {
+        vmid: "org:image",
         name: "org:image",
+        property: "org:image",
         content: "https://covid19tracker.artyboy.dev/covid19.webp"
       },
       {
+        vmid: "twitter:card",
         name: "twitter:card",
+        property: "twitter:card",
         content: "summary"
       },
       {
+        vmid: "twitter:title",
         name: "twitter:title",
+        property: "twitter:title",
         content: "ໜ້າຫຼັກ - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
       },
       {
+        vmid: "twitter:description",
         name: "twitter:description",
+        property: "twitter:description",
         content: "ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19 ພາສາລາວແບບບໍ່ເປັນທາງການ"
       },
       {
+        vmid: "twitter:url",
         name: "twitter:url",
+        property: "twitter:url",
         content: "https://covid19tracker.artyboy.dev"
       },
       {
+        vmid: "twitter:image",
         name: "twitter:image",
+        property: "twitter:image",
         content: "https://covid19tracker.artyboy.dev/covid19.webp"
       }
     ]

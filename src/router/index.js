@@ -5,6 +5,8 @@ import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 Vue.use(VueMeta, {
+  tagIDKeyName: "vmid",
+  attribute: "data-vue-meta",
   refreshOnceOnNavigation: true
 });
 

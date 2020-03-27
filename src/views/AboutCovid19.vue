@@ -35,51 +35,73 @@ export default {
     title: "COVID-19 ແມ່ນຫຍັງ?",
     meta: [
       {
-        meta: "title",
+        name: "title",
+        vmid: "title",
         content: "COVID-19 ແມ່ນຫຍັງ?"
       },
       {
         name: "description",
+        vmid: "description",
         content: "ຂໍ້ມູນເບື້ອງຕົ້ນກ່ຽວກັບ COVID-19"
       },
       {
         name: "og:type",
+        vmid: "og:type",
+        property: "og:type",
         content: "website"
       },
       {
         name: "og:title",
+        vmid: "og:title",
+        property: "og:title",
         content: "COVID-19 ແມ່ນຫຍັງ? - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
       },
       {
         name: "og:description",
+        vmid: "og:description",
+        property: "og:description",
         content: "ຂໍ້ມູນເບື້ອງຕົ້ນກ່ຽວກັບ COVID-19"
       },
       {
         name: "og:url",
+        vmid: "og:url",
+        property: "og:url",
         content: "https://covid19tracker.artyboy.dev/what-is-covid-19"
       },
       {
         name: "org:image",
+        vmid: "org:image",
+        property: "org:image",
         content: "https://covid19tracker.artyboy.dev/covid19.webp"
       },
       {
         name: "twitter:card",
+        vmid: "twitter:card",
+        property: "twitter:card",
         content: "summary"
       },
       {
         name: "twitter:title",
+        vmid: "twitter:title",
+        property: "twitter:title",
         content: "COVID-19 ແມ່ນຫຍັງ? - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
       },
       {
         name: "twitter:description",
+        vmid: "twitter:description",
+        property: "twitter:description",
         content: "ຂໍ້ມູນເບື້ອງຕົ້ນກ່ຽວກັບ COVID-19"
       },
       {
         name: "twitter:url",
+        vmid: "twitter:url",
+        property: "twitter:url",
         content: "https://covid19tracker.artyboy.dev/what-is-covid-19"
       },
       {
         name: "twitter:image",
+        vmid: "twitter:image",
+        property: "twitter:image",
         content: "https://covid19tracker.artyboy.dev/covid19.webp"
       }
     ]
