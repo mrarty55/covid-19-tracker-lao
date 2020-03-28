@@ -13,10 +13,18 @@
         <span>ວິທີປ້ອງກັນ COVID-19</span>
       </b-navbar-item>
       <b-navbar-dropdown label="ເວັບໄຊທີ່ກ່ຽວຂ້ອງ">
-        <b-navbar-item href="https://www.moh.gov.la/"
+        <b-navbar-item
+          href="https://www.moh.gov.la/"
+          target="_blank"
+          rel="noopener noreferer"
           >ກະຊວງສາທາລະນະສຸກ</b-navbar-item
         >
-        <b-navbar-item href="https://who.int">ອົງການອະນາໄມໂລກ</b-navbar-item>
+        <b-navbar-item
+          href="https://who.int"
+          target="_blank"
+          rel="noopener noreferer"
+          >ອົງການອະນາໄມໂລກ</b-navbar-item
+        >
       </b-navbar-dropdown>
     </template>
   </b-navbar>
