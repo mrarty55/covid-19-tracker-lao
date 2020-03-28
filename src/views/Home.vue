@@ -8,7 +8,10 @@
           </h1>
           <p class="subtitle">
             ຂໍ້ມູນທາງສະຖິຕິຕໍ່ໄປນີ້ແມ່ນໄດ້ຮັບມາຈາກ API ຂອງທາງ
-            <a href="https://github.com/NovelCOVID/API"
+            <a
+              href="https://github.com/NovelCOVID/API"
+              target="_blank"
+              rel="noopener noreferer"
               >github.com/NovelCOVID/API</a
             >
           </p>
