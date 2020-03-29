@@ -44,7 +44,7 @@ export default {
       },
       {
         name: "org:image",
-        content: "https://covid19tracker.artyboy.dev/covid19.webp"
+        content: "https://covid19.artyboy.dev/covid19.webp"
       },
       {
         name: "twitter:card",
@@ -61,7 +61,7 @@ export default {
       },
       {
         name: "twitter:image",
-        content: "https://covid19tracker.artyboy.dev/covid19.webp"
+        content: "https://covid19.artyboy.dev/covid19.webp"
       }
     ]
   }

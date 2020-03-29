@@ -94,13 +94,13 @@ export default {
         vmid: "og:url",
         name: "og:url",
         property: "og:url",
-        content: "https://covid19tracker.artyboy.dev"
+        content: "https://covid19.artyboy.dev"
       },
       {
         vmid: "org:image",
         name: "org:image",
         property: "org:image",
-        content: "https://covid19tracker.artyboy.dev/covid19.webp"
+        content: "https://covid19.artyboy.dev/covid19.webp"
       },
       {
         vmid: "twitter:card",
@@ -124,13 +124,13 @@ export default {
         vmid: "twitter:url",
         name: "twitter:url",
         property: "twitter:url",
-        content: "https://covid19tracker.artyboy.dev"
+        content: "https://covid19.artyboy.dev"
       },
       {
         vmid: "twitter:image",
         name: "twitter:image",
         property: "twitter:image",
-        content: "https://covid19tracker.artyboy.dev/covid19.webp"
+        content: "https://covid19.artyboy.dev/covid19.webp"
       }
     ]
   },
