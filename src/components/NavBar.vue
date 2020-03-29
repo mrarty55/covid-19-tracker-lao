@@ -20,6 +20,12 @@
           >ກະຊວງສາທາລະນະສຸກ</b-navbar-item
         >
         <b-navbar-item
+          href="https://covid19.gov.la/"
+          target="_blank"
+          rel="noopener noreferer"
+          >ຄະນະສະເພາະກິດ COVID-19</b-navbar-item
+        >
+        <b-navbar-item
           href="https://who.int"
           target="_blank"
           rel="noopener noreferer"
