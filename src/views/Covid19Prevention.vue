@@ -50,7 +50,7 @@ export default {
         vmid: "og:title",
         property: "og:title",
         content:
-          "ວິທີການປ້ອງກັນ COVID-19 ເບື້ອງຕົ້ນ - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
+          "ວິທີການປ້ອງກັນ COVID-19 ເບື້ອງຕົ້ນ - ເວັບໄຊຕິດຕາມການແພ່ລະບາດຂອງ COVID-19"
       },
       {
         name: "og:description",
@@ -81,7 +81,7 @@ export default {
         vmid: "twitter:title",
         property: "twitter:title",
         content:
-          "ວິທີການປ້ອງກັນ COVID-19 ເບື້ອງຕົ້ນ - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
+          "ວິທີການປ້ອງກັນ COVID-19 ເບື້ອງຕົ້ນ - ເວັບໄຊຕິດຕາມການແພ່ລະບາດຂອງ COVID-19"
       },
       {
         name: "twitter:description",

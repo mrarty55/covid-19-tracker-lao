@@ -1,18 +1,27 @@
 <template>
   <div>
-    <NavBar />
-    <router-view />
+    <header>
+      <NavBar />
+    </header>
+    <main style="min-height: 100vh">
+      <router-view />
+    </main>
+    <footer>
+      <Foot />
+    </footer>
   </div>
 </template>
 <script>
 import NavBar from "@/components/NavBar.vue";
+import Foot from "@/components/Footer.vue";
 
 export default {
   components: {
-    NavBar
+    NavBar,
+    Foot
   },
   metaInfo: {
-    titleTemplate: "%s - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19",
+    titleTemplate: "%s - ເວັບໄຊຕິດຕາມການແພ່ລະບາດຂອງ COVID-19",
     meta: [
       {
         name: "author",

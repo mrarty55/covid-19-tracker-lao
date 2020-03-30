@@ -20,27 +20,31 @@
     </section>
     <section class="columns">
       <div class="column">
-        <div class="notification is-warning">
-          <h3 class="title"><b-icon icon="virus"></b-icon> ກວດພົບ</h3>
-          <p>ທົ່ວໂລກ: {{ overall.cases }} ຄົນ</p>
-          <p>ປະເທດລາວ: {{ laos.cases }} ຄົນ</p>
-        </div>
+        <SummaryCard
+          title="ກວດພົບ"
+          type="is-warning"
+          icon="virus"
+          :overall="overall.cases"
+          :laos="laos.cases"
+        ></SummaryCard>
       </div>
       <div class="column">
-        <div class="notification is-danger">
-          <h3 class="title">
-            <b-icon icon="skull-crossbones"></b-icon> ເສຍຊີວິດ
-          </h3>
-          <p>ທົ່ວໂລກ: {{ overall.deaths }} ຄົນ</p>
-          <p>ປະເທດລາວ: {{ laos.deaths }} ຄົນ</p>
-        </div>
+        <SummaryCard
+          title="ເສຍຊີວິດ"
+          type="is-danger"
+          icon="skull-crossbones"
+          :overall="overall.deaths"
+          :laos="laos.deaths"
+        ></SummaryCard>
       </div>
       <div class="column">
-        <div class="notification is-success">
-          <h3 class="title"><b-icon icon="smile"></b-icon> ຮັກສາແລ້ວ</h3>
-          <p>ທົ່ວໂລກ: {{ overall.recovered }} ຄົນ</p>
-          <p>ປະເທດລາວ: {{ laos.recovered }} ຄົນ</p>
-        </div>
+        <SummaryCard
+          title="ຮັກສາແລ້ວ"
+          type="is-success"
+          icon="smile"
+          :overall="overall.recovered"
+          :laos="laos.recovered"
+        ></SummaryCard>
       </div>
     </section>
     <hr />
@@ -56,21 +60,25 @@
 
 <script>
 // @ is an alias to /src
+import SummaryCard from "@/components/SummaryCard";
 
 export default {
   name: "Home",
+  components: {
+    SummaryCard
+  },
   metaInfo: {
     title: "ໜ້າຫຼັກ",
     meta: [
       {
         vmid: "title",
         name: "title",
-        content: "ໜ້າຫຼັກ - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
+        content: "ໜ້າຫຼັກ - ເວັບໄຊຕິດຕາມການແພ່ລະບາດຂອງ COVID-19"
       },
       {
         vmid: "description",
         name: "description",
-        content: "ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19 ພາສາລາວແບບບໍ່ເປັນທາງການ"
+        content: "ເວັບໄຊຕິດຕາມການແພ່ລະບາດຂອງ COVID-19 ພາສາລາວແບບບໍ່ເປັນທາງການ"
       },
       {
         vmid: "og:type",
@@ -82,13 +90,13 @@ export default {
         vmid: "og:title",
         name: "og:title",
         property: "og:title",
-        content: "ໜ້າຫຼັກ - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
+        content: "ໜ້າຫຼັກ - ເວັບໄຊຕິດຕາມການແພ່ລະບາດຂອງ COVID-19"
       },
       {
         vmid: "og:description",
         name: "og:description",
         property: "og:description",
-        content: "ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19 ພາສາລາວແບບບໍ່ເປັນທາງການ"
+        content: "ເວັບໄຊຕິດຕາມການແພ່ລະບາດຂອງ COVID-19 ພາສາລາວແບບບໍ່ເປັນທາງການ"
       },
       {
         vmid: "og:url",
@@ -112,13 +120,13 @@ export default {
         vmid: "twitter:title",
         name: "twitter:title",
         property: "twitter:title",
-        content: "ໜ້າຫຼັກ - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
+        content: "ໜ້າຫຼັກ - ເວັບໄຊຕິດຕາມການແພ່ລະບາດຂອງ COVID-19"
       },
       {
         vmid: "twitter:description",
         name: "twitter:description",
         property: "twitter:description",
-        content: "ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19 ພາສາລາວແບບບໍ່ເປັນທາງການ"
+        content: "ເວັບໄຊຕິດຕາມການແພ່ລະບາດຂອງ COVID-19 ພາສາລາວແບບບໍ່ເປັນທາງການ"
       },
       {
         vmid: "twitter:url",

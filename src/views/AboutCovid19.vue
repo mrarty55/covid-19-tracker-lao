@@ -54,7 +54,7 @@ export default {
         name: "og:title",
         vmid: "og:title",
         property: "og:title",
-        content: "COVID-19 ແມ່ນຫຍັງ? - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
+        content: "COVID-19 ແມ່ນຫຍັງ? - ເວັບໄຊຕິດຕາມການແພ່ລະບາດຂອງ COVID-19"
       },
       {
         name: "og:description",
@@ -84,7 +84,7 @@ export default {
         name: "twitter:title",
         vmid: "twitter:title",
         property: "twitter:title",
-        content: "COVID-19 ແມ່ນຫຍັງ? - ເວັບໄຊຕິດຕາມການແຜ່ລະບາດຂອງ COVID-19"
+        content: "COVID-19 ແມ່ນຫຍັງ? - ເວັບໄຊຕິດຕາມການແພ່ລະບາດຂອງ COVID-19"
       },
       {
         name: "twitter:description",
