@@ -21,30 +21,30 @@
     <section class="columns">
       <div class="column">
         <SummaryCard
-          title="ກວດພົບ"
           type="is-warning"
           icon="virus"
           :overall="overall.cases"
           :laos="laos.cases"
-        ></SummaryCard>
+          >ກວດພົບ</SummaryCard
+        >
       </div>
       <div class="column">
         <SummaryCard
-          title="ເສຍຊີວິດ"
           type="is-danger"
           icon="skull-crossbones"
           :overall="overall.deaths"
           :laos="laos.deaths"
-        ></SummaryCard>
+          >ເສຍຊີວິດ</SummaryCard
+        >
       </div>
       <div class="column">
         <SummaryCard
-          title="ຮັກສາແລ້ວ"
           type="is-success"
           icon="smile"
           :overall="overall.recovered"
           :laos="laos.recovered"
-        ></SummaryCard>
+          >ຮັກສາແລ້ວ</SummaryCard
+        >
       </div>
     </section>
     <hr />

@@ -1,6 +1,6 @@
 <template>
   <div class="notification" :class="type">
-    <h3 class="title"><b-icon :icon="icon"></b-icon> {{ title }}</h3>
+    <h3 class="title"><b-icon :icon="icon"></b-icon> <slot></slot></h3>
     <p>ທົ່ວໂລກ: {{ overall }} ຄົນ</p>
     <p>ປະເທດລາວ: {{ laos }} ຄົນ</p>
   </div>
@@ -9,7 +9,6 @@
 export default {
   name: "SummaryCard",
   props: {
-    title: String,
     type: String,
     icon: String,
     overall: Number,
