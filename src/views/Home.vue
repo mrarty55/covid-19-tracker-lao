@@ -17,7 +17,9 @@
           </p>
           <p>
             ອັບເດດຂໍ້ມູນຫຼ້າສຸດເມື່ອວັນທີ
-            {{ new Date(overall.updated) | moment("DD MMMM YYYY HH:mm:ss") }}
+            {{ new Date(laos.updated) | moment("DD MMMM YYYY") }}
+            ເວລາ
+            {{ new Date(laos.updated) | moment("HH:mm:ss") }}
           </p>
         </div>
       </div>
