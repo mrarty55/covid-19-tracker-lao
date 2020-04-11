@@ -15,9 +15,14 @@
               >github.com/NovelCOVID/API</a
             >
           </p>
+          <p>
+            ອັບເດດຂໍ້ມູນຫຼ້າສຸດເມື່ອວັນທີ
+            {{ new Date(overall.updated) | moment("DD MMMM YYYY HH:mm:ss") }}
+          </p>
         </div>
       </div>
     </section>
+    <hr />
     <section class="columns">
       <div class="column">
         <SummaryCard
@@ -200,7 +205,7 @@ export default {
   methods: {
     getAllCountriesData() {
       this.$http
-        .get("https://corona.lmao.ninja/countries")
+        .get("https://corona.lmao.ninja/v2/countries")
         .then(res => {
           this.allCountries = res.data;
         })
@@ -208,7 +213,7 @@ export default {
     },
     getLaosData() {
       this.$http
-        .get("https://corona.lmao.ninja/countries/lao")
+        .get("https://corona.lmao.ninja/v2/countries/lao")
         .then(res => {
           this.laos = res.data;
         })
@@ -216,7 +221,7 @@ export default {
     },
     getOverallData() {
       this.$http
-        .get("https://corona.lmao.ninja/all")
+        .get("https://corona.lmao.ninja/v2/all")
         .then(res => {
           this.overall = res.data;
         })

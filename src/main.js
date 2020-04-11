@@ -3,10 +3,18 @@ import App from "./App.vue";
 import router from "./router";
 import Axios from "axios";
 import VueAxios from "vue-axios";
+import Moment from "moment";
+import "moment/locale/lo";
+import VueMoment from "vue-moment";
 import Buefy from "buefy";
 import "@fortawesome/fontawesome-free/js/all";
 
 Vue.use(VueAxios, Axios);
+
+Moment.locale("lo");
+Vue.use(VueMoment, {
+  moment: Moment
+});
 Vue.use(Buefy, {
   defaultIconPack: "fas"
 });
