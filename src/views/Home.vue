@@ -17,9 +17,17 @@
           </p>
           <p>
             ອັບເດດຂໍ້ມູນຫຼ້າສຸດເມື່ອວັນທີ
-            {{ new Date(laos.updated) | moment("DD MMMM YYYY") }}
+            {{
+              laos.updated
+                ? new Date(laos.updated)
+                : new Date(laosAlt.updated) | moment("DD MMMM YYYY")
+            }}
             ເວລາ
-            {{ new Date(laos.updated) | moment("HH:mm:ss") }}
+            {{
+              laos.updated
+                ? new Date(laos.updated)
+                : new Date(laosAlt.updated) | moment("HH:mm:ss")
+            }}
           </p>
         </div>
       </div>
@@ -31,7 +39,7 @@
           type="is-warning"
           icon="virus"
           :overall="overall.cases"
-          :laos="laos.cases"
+          :laos="laos.cases || laosAlt.cases"
           >ກວດພົບ</SummaryCard
         >
       </div>
@@ -40,7 +48,7 @@
           type="is-danger"
           icon="skull-crossbones"
           :overall="overall.deaths"
-          :laos="laos.deaths"
+          :laos="laos.deaths || laosAlt.deaths"
           >ເສຍຊີວິດ</SummaryCard
         >
       </div>
@@ -49,7 +57,7 @@
           type="is-success"
           icon="smile"
           :overall="overall.recovered"
-          :laos="laos.recovered"
+          :laos="laos.recovered || laosAlt.recovered"
           >ຮັກສາແລ້ວ</SummaryCard
         >
       </div>
@@ -153,6 +161,7 @@ export default {
     return {
       allCountries: [],
       laos: [],
+      laosAlt: [],
       overall: [],
       tableColumn: [
         {
@@ -202,6 +211,7 @@ export default {
   created: function() {
     this.getAllCountriesData();
     this.getLaosData();
+    this.getLaosAltData();
     this.getOverallData();
   },
   methods: {
@@ -220,6 +230,15 @@ export default {
           this.laos = res.data;
         })
         .catch(err => console.error(err));
+    },
+    getLaosAltData() {
+      this.$http
+        .get("https://corona.lmao.ninja/v2/countries")
+        .then(res => {
+          let data = res.data;
+          this.laosAlt = data.find(i => i.countryInfo.iso3 == "LAO");
+        })
+        .catch(err => console.err(err));
     },
     getOverallData() {
       this.$http
