@@ -33,6 +33,14 @@
         >
       </b-navbar-dropdown>
     </template>
+    <template slot="end">
+      <b-navbar-item
+        href="https://artyboy.dev"
+        target="_blank"
+        rel="noopener noreferer"
+        >ເວັບໄຊນັກພັດທະນາ</b-navbar-item
+      >
+    </template>
   </b-navbar>
 </template>
 <script>
