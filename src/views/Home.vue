@@ -168,7 +168,8 @@ export default {
           field: "country",
           label: "ປະເທດ",
           sortable: true,
-          width: 250
+          width: 250,
+          searchable: true
         },
         {
           field: "cases",
@@ -221,7 +222,15 @@ export default {
         .then(res => {
           this.allCountries = res.data;
         })
-        .catch(err => console.error(err));
+        .catch(err => {
+          console.log(err);
+          this.$buefy.toast.open({
+            duration: 5000,
+            message: `ບໍ່ສາມາດໂຫຼດຂໍ້ມູນແຕ່ລະປະເທດໄດ້, ກະລຸນາລອງໃໝ່ໃນພາຍຫຼັງ`,
+            type: "is-danger",
+            position: "is-bottom"
+          });
+        });
     },
     getLaosData() {
       this.$http
@@ -229,7 +238,15 @@ export default {
         .then(res => {
           this.laos = res.data;
         })
-        .catch(err => console.error(err));
+        .catch(err => {
+          console.log(err);
+          this.$buefy.toast.open({
+            duration: 5000,
+            message: `ບໍ່ສາມາດໂຫຼດຂໍ້ມູນປະເທດລາວໄດ້, ກະລຸນາລອງໃໝ່ໃນພາຍຫຼັງ`,
+            type: "is-danger",
+            position: "is-bottom"
+          });
+        });
     },
     getLaosAltData() {
       this.$http
@@ -238,7 +255,15 @@ export default {
           let data = res.data;
           this.laosAlt = data.find(i => i.countryInfo.iso3 == "LAO");
         })
-        .catch(err => console.err(err));
+        .catch(err => {
+          console.log(err);
+          this.$buefy.toast.open({
+            duration: 5000,
+            message: `ບໍ່ສາມາດໂຫຼດຂໍ້ມູນປະເທດລາວໄດ້, ກະລຸນາລອງໃໝ່ໃນພາຍຫຼັງ`,
+            type: "is-danger",
+            position: "is-bottom"
+          });
+        });
     },
     getOverallData() {
       this.$http
@@ -246,7 +271,15 @@ export default {
         .then(res => {
           this.overall = res.data;
         })
-        .catch(err => console.error(err));
+        .catch(err => {
+          console.log(err);
+          this.$buefy.toast.open({
+            duration: 5000,
+            message: `ບໍ່ສາມາດໂຫຼດຂໍ້ມູນພາບລວມໄດ້, ກະລຸນາລອງໃໝ່ໃນພາຍຫຼັງ`,
+            type: "is-danger",
+            position: "is-bottom"
+          });
+        });
     }
   }
 };
