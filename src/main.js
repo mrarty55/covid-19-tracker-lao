@@ -8,6 +8,10 @@ import "moment/locale/lo";
 import VueMoment from "vue-moment";
 import Buefy from "buefy";
 import "@fortawesome/fontawesome-free/js/all";
+import numeral from 'numeral';
+import numFormat from 'vue-filter-number-format';
+ 
+Vue.filter('numFormat', numFormat(numeral));
 
 Vue.use(VueAxios, Axios);
 

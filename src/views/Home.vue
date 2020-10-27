@@ -38,7 +38,7 @@
         <SummaryCard
           type="is-warning"
           icon="virus"
-          :overall="overall.cases"
+          :overall="overall.cases | numFormat "
           :laos="laos.cases || laosAlt.cases"
           >ກວດພົບ</SummaryCard
         >
@@ -47,7 +47,7 @@
         <SummaryCard
           type="is-danger"
           icon="skull-crossbones"
-          :overall="overall.deaths"
+          :overall="overall.deaths | numFormat "
           :laos="laos.deaths || laosAlt.deaths"
           >ເສຍຊີວິດ</SummaryCard
         >
@@ -56,7 +56,7 @@
         <SummaryCard
           type="is-success"
           icon="smile"
-          :overall="overall.recovered"
+          :overall="overall.recovered | numFormat "
           :laos="laos.recovered || laosAlt.recovered"
           >ຮັກສາແລ້ວ</SummaryCard
         >
