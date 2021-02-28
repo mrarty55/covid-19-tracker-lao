@@ -1,76 +1,91 @@
 <template>
-  <div class="container content">
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <h1 class="title">
-            ຂໍ້ມູນການແພ່ລະບາດຂອງໂຣກຕິດເຊື້ອໄວຣັສໂຄໂຣນາສາຍພັນໃໝ່ 2019
-          </h1>
-          <p class="subtitle">
-            ຂໍ້ມູນທາງສະຖິຕິຕໍ່ໄປນີ້ແມ່ນໄດ້ຮັບມາຈາກ API ຂອງທາງ
-            <a
-              href="https://github.com/NovelCOVID/API"
-              target="_blank"
-              rel="noopener noreferer"
-              >github.com/NovelCOVID/API</a
-            >
-          </p>
-          <p>
-            ອັບເດດຂໍ້ມູນຫຼ້າສຸດເມື່ອວັນທີ
-            {{
-              laos.updated
-                ? new Date(laos.updated)
-                : new Date(laosAlt.updated) | moment("DD MMMM YYYY")
-            }}
-            ເວລາ
-            {{
-              laos.updated
-                ? new Date(laos.updated)
-                : new Date(laosAlt.updated) | moment("HH:mm:ss")
-            }}
-          </p>
-        </div>
-      </div>
-    </section>
-    <hr />
-    <section class="columns">
-      <div class="column">
-        <SummaryCard
-          type="is-warning"
-          icon="virus"
-          :overall="overall.cases | numFormat "
-          :laos="laos.cases || laosAlt.cases"
-          >ກວດພົບ</SummaryCard
+  <v-container>
+    <v-col cols="12" class="text-center"
+      ><h2>ຂໍ້ມູນການແພ່ລະບາດຂອງໂຣກຕິດເຊື້ອໄວຣັສໂຄໂຣນາສາຍພັນໃໝ່ 2019</h2>
+      <p>
+        ອ້າງອີງຂໍ້ມູນຈາກ
+        <a href="https://disease.sh" rel="noopener noreferer" target="_blank"
+          >disease.sh</a
         >
-      </div>
-      <div class="column">
-        <SummaryCard
-          type="is-danger"
-          icon="skull-crossbones"
-          :overall="overall.deaths | numFormat "
-          :laos="laos.deaths || laosAlt.deaths"
-          >ເສຍຊີວິດ</SummaryCard
-        >
-      </div>
-      <div class="column">
-        <SummaryCard
-          type="is-success"
-          icon="smile"
-          :overall="overall.recovered | numFormat "
-          :laos="laos.recovered || laosAlt.recovered"
-          >ຮັກສາແລ້ວ</SummaryCard
-        >
-      </div>
-    </section>
-    <hr />
-    <b-table
-      :data="allCountries"
-      :columns="tableColumn"
-      :default-sort="['cases', 'desc']"
-      sticky-header
-      height="100vh"
-    ></b-table>
-  </div>
+      </p>
+      <p>
+        ອັບເດດຂໍ້ມູນຫຼ້າສຸດເມື່ອ
+        {{ laos.updated | moment("DD MMM YYYY") }}
+        ເວລາ {{ laos.updated | moment("HH:mm:ss") }}
+      </p></v-col
+    >
+    <v-divider />
+    <v-row class="my-4">
+      <v-col :cols="cols">
+        <summary-card
+          title="ກວດພົບ"
+          color="orange"
+          icon="fas fa-virus"
+          :dark="true"
+          :overall="overall.cases"
+          :laos="laos.cases"
+        />
+      </v-col>
+      <v-col :cols="cols">
+        <summary-card
+          title="ເສຍຊີວິດ"
+          color="red"
+          icon="fas fa-skull-crossbones"
+          :dark="true"
+          :overall="overall.deaths"
+          :laos="laos.deaths"
+        />
+      </v-col>
+      <v-col :cols="cols">
+        <summary-card
+          title="ຮັກສາແລ້ວ"
+          color="green"
+          icon="fas fa-smile"
+          :dark="true"
+          :overall="overall.recovered"
+          :laos="laos.recovered"
+        />
+      </v-col>
+    </v-row>
+    <v-divider />
+    <v-data-table
+      :headers="tableHeaders"
+      :items="allCountries"
+      :items-per-page="25"
+      :search="searchText"
+      :footer-props="{ 'items-per-page-options': itemsPerPageOptions }"
+      class="my-4"
+    >
+      <template #top>
+        <h3>ຕາຕະລາງຂໍ້ມູນການແພ່ລະບາດຂອງພະຍາດໂຄວິດ-19</h3>
+        <v-text-field
+          v-model="searchText"
+          label="ຄົ້ນຫາປະເທດ (ພາສາອັງກິດເທົ່ານັ້ນ)"
+        />
+      </template>
+      <template #[`item.countryInfo`]="{ value }">
+        <span><v-img :src="value.flag" :alt="value.iso3" width="50%"/></span
+      ></template>
+      <template #[`item.cases`]="{ value }"
+        ><span>{{ value | numFormat }}</span></template
+      >
+      <template #[`item.todayCases`]="{ value }"
+        ><span>{{ value | numFormat }}</span></template
+      >
+      <template #[`item.deaths`]="{ value }"
+        ><span>{{ value | numFormat }}</span></template
+      >
+      <template #[`item.todayDeaths`]="{ value }"
+        ><span>{{ value | numFormat }}</span></template
+      >
+      <template #[`item.active`]="{ value }"
+        ><span>{{ value | numFormat }}</span></template
+      >
+      <template #[`item.recovered`]="{ value }"
+        ><span>{{ value | numFormat }}</span></template
+      >
+    </v-data-table>
+  </v-container>
 </template>
 
 <script>
@@ -83,12 +98,12 @@ export default {
     SummaryCard
   },
   metaInfo: {
-    title: "ໜ້າຫຼັກ",
+    titleTemplate: "ເວັບໄຊຕິດຕາມການແພ່ລະບາດຂອງ COVID-19",
     meta: [
       {
         vmid: "title",
         name: "title",
-        content: "ໜ້າຫຼັກ - ເວັບໄຊຕິດຕາມການແພ່ລະບາດຂອງ COVID-19"
+        content: "ເວັບໄຊຕິດຕາມການແພ່ລະບາດຂອງ COVID-19"
       },
       {
         vmid: "description",
@@ -105,7 +120,7 @@ export default {
         vmid: "og:title",
         name: "og:title",
         property: "og:title",
-        content: "ໜ້າຫຼັກ - ເວັບໄຊຕິດຕາມການແພ່ລະບາດຂອງ COVID-19"
+        content: "ເວັບໄຊຕິດຕາມການແພ່ລະບາດຂອງ COVID-19"
       },
       {
         vmid: "og:description",
@@ -135,7 +150,7 @@ export default {
         vmid: "twitter:title",
         name: "twitter:title",
         property: "twitter:title",
-        content: "ໜ້າຫຼັກ - ເວັບໄຊຕິດຕາມການແພ່ລະບາດຂອງ COVID-19"
+        content: "ເວັບໄຊຕິດຕາມການແພ່ລະບາດຂອງ COVID-19"
       },
       {
         vmid: "twitter:description",
@@ -160,126 +175,80 @@ export default {
   data: () => {
     return {
       allCountries: [],
-      laos: [],
-      laosAlt: [],
-      overall: [],
-      tableColumn: [
+      laos: {},
+      overall: {},
+      searchText: "",
+      itemsPerPageOptions: [25, 50, 75, 100, -1],
+      tableHeaders: [
         {
-          field: "country",
-          label: "ປະເທດ",
+          text: "",
+          value: "countryInfo",
+          width: "10"
+        },
+        {
+          text: "ປະເທດ",
           sortable: true,
-          width: 250,
-          searchable: true
+          value: "country"
         },
         {
-          field: "cases",
-          label: "ກວດພົບ",
-          sortable: true
+          text: "ກວດພົບ",
+          sortable: true,
+          value: "cases"
         },
         {
-          field: "todayCases",
-          label: "ກວດພົບຫຼ້າສຸດ",
-          sortable: true
+          text: "ກວດພົບມື້ນີ້",
+          sortable: true,
+          value: "todayCases"
         },
         {
-          field: "deaths",
-          label: "ເສຍຊີວິດ",
-          sortable: true
+          text: "ເສຍຊີວິດ",
+          sortable: true,
+          value: "deaths"
         },
         {
-          field: "todayDeaths",
-          label: "ເສຍຊີວິດຫຼ້າສຸດ",
-          sortable: true
+          text: "ເສຍຊີວິດມື້ນີ້",
+          sortable: true,
+          value: "todayDeaths"
         },
         {
-          field: "recovered",
-          label: "ຮັກສາແລ້ວ",
-          sortable: true
+          text: "ຮັກສາແລ້ວ",
+          sortable: true,
+          value: "recovered"
         },
         {
-          field: "active",
-          label: "ກໍາລັງຮັກສາ",
-          sortable: true
-        },
-        {
-          field: "critical",
-          label: "ອາການໜັກ",
-          sortable: true
+          text: "ກໍາລັງຮັກສາ",
+          sortable: true,
+          value: "active"
         }
       ]
     };
   },
+  computed: {
+    cols() {
+      return this.$vuetify.breakpoint.mobile ? 12 : 4;
+    }
+  },
   created: function() {
     this.getAllCountriesData();
     this.getLaosData();
-    this.getLaosAltData();
+    // this.getLaosAltData();
     this.getOverallData();
   },
   methods: {
-    getAllCountriesData() {
-      this.$http
-        .get("https://corona.lmao.ninja/v2/countries")
-        .then(res => {
-          this.allCountries = res.data;
-        })
-        .catch(err => {
-          console.log(err);
-          this.$buefy.toast.open({
-            duration: 5000,
-            message: `ບໍ່ສາມາດໂຫຼດຂໍ້ມູນແຕ່ລະປະເທດໄດ້, ກະລຸນາລອງໃໝ່ໃນພາຍຫຼັງ`,
-            type: "is-danger",
-            position: "is-bottom"
-          });
-        });
-    },
     getLaosData() {
-      this.$http
-        .get("https://corona.lmao.ninja/v2/countries/lao")
-        .then(res => {
-          this.laos = res.data;
-        })
-        .catch(err => {
-          console.log(err);
-          this.$buefy.toast.open({
-            duration: 5000,
-            message: `ບໍ່ສາມາດໂຫຼດຂໍ້ມູນປະເທດລາວໄດ້, ກະລຸນາລອງໃໝ່ໃນພາຍຫຼັງ`,
-            type: "is-danger",
-            position: "is-bottom"
-          });
-        });
-    },
-    getLaosAltData() {
-      this.$http
-        .get("https://corona.lmao.ninja/v2/countries")
-        .then(res => {
-          let data = res.data;
-          this.laosAlt = data.find(i => i.countryInfo.iso3 == "LAO");
-        })
-        .catch(err => {
-          console.log(err);
-          this.$buefy.toast.open({
-            duration: 5000,
-            message: `ບໍ່ສາມາດໂຫຼດຂໍ້ມູນປະເທດລາວໄດ້, ກະລຸນາລອງໃໝ່ໃນພາຍຫຼັງ`,
-            type: "is-danger",
-            position: "is-bottom"
-          });
-        });
+      this.$http.get("/covid-19/countries/laos").then(res => {
+        this.laos = res.data;
+      });
     },
     getOverallData() {
-      this.$http
-        .get("https://corona.lmao.ninja/v2/all")
-        .then(res => {
-          this.overall = res.data;
-        })
-        .catch(err => {
-          console.log(err);
-          this.$buefy.toast.open({
-            duration: 5000,
-            message: `ບໍ່ສາມາດໂຫຼດຂໍ້ມູນພາບລວມໄດ້, ກະລຸນາລອງໃໝ່ໃນພາຍຫຼັງ`,
-            type: "is-danger",
-            position: "is-bottom"
-          });
-        });
+      this.$http.get("/covid-19/all").then(res => {
+        this.overall = res.data;
+      });
+    },
+    getAllCountriesData() {
+      this.$http.get("/covid-19/countries").then(res => {
+        this.allCountries = res.data;
+      });
     }
   }
 };

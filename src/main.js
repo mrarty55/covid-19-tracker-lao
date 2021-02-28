@@ -6,26 +6,24 @@ import VueAxios from "vue-axios";
 import Moment from "moment";
 import "moment/locale/lo";
 import VueMoment from "vue-moment";
-import Buefy from "buefy";
-import "@fortawesome/fontawesome-free/js/all";
-import numeral from 'numeral';
-import numFormat from 'vue-filter-number-format';
- 
-Vue.filter('numFormat', numFormat(numeral));
+import numeral from "numeral";
+import numFormat from "vue-filter-number-format";
+import vuetify from "./plugins/vuetify";
 
+Vue.filter("numFormat", numFormat(numeral));
+
+Axios.defaults.baseURL = "https://disease.sh/v3";
 Vue.use(VueAxios, Axios);
 
 Moment.locale("lo");
 Vue.use(VueMoment, {
   moment: Moment
 });
-Vue.use(Buefy, {
-  defaultIconPack: "fas"
-});
 
 Vue.config.productionTip = false;
 
 new Vue({
   router,
+  vuetify,
   render: h => h(App)
 }).$mount("#app");

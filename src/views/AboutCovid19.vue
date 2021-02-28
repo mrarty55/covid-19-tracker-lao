@@ -1,13 +1,9 @@
 <template>
-  <div class="container">
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <h1 class="title">ຂໍ້ມູນເບື້ອງຕົ້ນກ່ຽວກັບ COVID-19</h1>
-        </div>
-      </div>
-    </section>
-    <div class="content">
+  <v-container>
+    <v-col class="text-center">
+      <h2>ຂໍ້ມູນເບື້ອງຕົ້ນກ່ຽວກັບ COVID-19</h2>
+    </v-col>
+    <v-col>
       <h3>ທີ່ມາຂອງ COVID-19</h3>
       <p>
         COVID-19
@@ -25,8 +21,8 @@
         <li>ອິດເມື່ອຍງ່າຍ</li>
         <li>ຫາຍໃຈລໍາບາກ (ກໍລະນີຮ້າຍແຮງ)</li>
       </ul>
-    </div>
-  </div>
+    </v-col>
+  </v-container>
 </template>
 <script>
 export default {

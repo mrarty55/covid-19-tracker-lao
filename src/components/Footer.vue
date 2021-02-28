@@ -1,12 +1,11 @@
 <template>
-  <footer class="footer">
-    <div class="content has-text-centered">
+  <v-footer app absolute>
+    <v-col class="text-center" cols="12">
       <p>
-        {{ year }} © COVID-19 Tracker Website. Built by Philaphonh Inthavongsa
+        {{ year }} © COVID-19 Tracking Website. Built by Philaphonh Inthavongsa
       </p>
-      <p>{{ year }} © ເວັບໄຊຕິດຕາມ COVID-19. ພັດທະນາໂດຍ ພິລະພົນ ອິນທະວົງສາ</p>
-    </div>
-  </footer>
+    </v-col>
+  </v-footer>
 </template>
 <script>
 export default {

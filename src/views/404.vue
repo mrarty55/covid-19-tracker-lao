@@ -1,19 +1,11 @@
 <template>
-  <div class="container">
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <h1 class="title">ບໍ່ພົບໜ້າທີ່ຕ້ອງການເຂົ້າເຖິງ!</h1>
-          <p class="subtitle">
-            ກະລຸນາກວດສອບທີ່ຢູ່ໃຫ້ຖືກຕ້ອງ ແລ້ວລອງໃໝ່ອີກຄັ້ງ...
-          </p>
-        </div>
-      </div>
-    </section>
-    <figure class="box has-text-centered">
-      <img src="/error-image.webp" alt="Error" />
-    </figure>
-  </div>
+  <v-container>
+    <v-col class="text-center">
+      <h2>ບໍ່ພົບໜ້າທີ່ຕ້ອງການເຂົ້າເຖິງ</h2>
+      <p>ກະລຸນາລອງໃໝ່ອີກຄັ້ງ</p>
+      <v-img src="/error-image.webp" alt="Error" width="50vw" class="mx-auto" />
+    </v-col>
+  </v-container>
 </template>
 <script>
 export default {

@@ -1,15 +1,15 @@
 <template>
-  <div>
+  <v-app>
     <header>
       <NavBar />
     </header>
-    <main style="min-height: 100vh">
+    <v-main>
       <router-view />
-    </main>
+    </v-main>
     <footer>
       <Foot />
     </footer>
-  </div>
+  </v-app>
 </template>
 <script>
 import NavBar from "@/components/NavBar.vue";
@@ -36,8 +36,6 @@ export default {
 };
 </script>
 <style lang="scss">
-@charset "utf-8";
-
 @font-face {
   font-family: "Noto Sans Lao";
   src: url("assets/fonts/NotoSansLao-Light.woff2");
@@ -63,13 +61,4 @@ export default {
   src: url("assets/fonts/NotoSansLao-Bold.woff2");
   font-weight: 700;
 }
-
-@import "~bulma/sass/utilities/_all";
-
-$my-font: "Noto Sans Lao", sans-serif;
-
-$family-primary: $my-font;
-
-@import "~bulma";
-@import "~buefy/src/scss/buefy";
 </style>

@@ -1,13 +1,9 @@
 <template>
-  <div class="container">
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <h1 class="title">ວີທີການປ້ອງກັນ COVID-19 ເບື້ອງຕົ້ນ</h1>
-        </div>
-      </div>
-    </section>
-    <div class="content">
+  <v-container>
+    <v-col class="text-center"
+      ><h2>ວີທີການປ້ອງກັນ COVID-19 ເບື້ອງຕົ້ນ</h2></v-col
+    >
+    <v-col>
       <h3>ລ້າງມືເປັນປະຈໍາ</h3>
       <p>
         ລ້າງມືເປັນປະຈໍາດ້ວຍສະບູ ຫຼືນໍ້າຢາລ້າງມືທີ່ມີສ່ວນປະສົມຂອງເຫຼົ້າ (Alcohol)
@@ -19,9 +15,9 @@
       <p>ການກະທໍາດັ່ງກ່າວອາດເຮັດໃຫ້ເຊື້ອສາມາດເຂົ້າສູ່ຮ່າງກາຍເຮົາໄດ້</p>
       <h3>ໄອຈາມໃຫ້ຖືກວິທີ</h3>
       <p>ເອົາແຂນສອກ ຫຼືດຶງຄໍເສື້ອຂຶ້ນມາປົກປິດໃບໜ້າເມື່ອໄອ ຫຼືຈາມ</p>
-      <h3>ຖ້າຮູ້ສຶກວ່າບໍ່ສະບາຍ, ເປັນໄຂ້, ຫາຍໃຈລໍາບາກໃຫ້ໄປພົບແພດທັນທີ</h3>
-    </div>
-  </div>
+      <h3>ຖ້າຮູ້ສຶກວ່າບໍ່ສະບາຍ, ເປັນໄຂ້, ຫາຍໃຈລໍາບາກໃຫ້ໄປພົບແພດທັນທີ</h3></v-col
+    >
+  </v-container>
 </template>
 <script>
 export default {

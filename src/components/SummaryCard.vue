@@ -1,18 +1,28 @@
 <template>
-  <div class="notification" :class="type">
-    <h3 class="title"><b-icon :icon="icon"></b-icon> <slot></slot></h3>
-    <p>ທົ່ວໂລກ: {{ overall }} ຄົນ</p>
-    <p>ປະເທດລາວ: {{ laos }} ຄົນ</p>
-  </div>
+  <v-card :color="color" :dark="dark">
+    <v-card-title
+      ><v-icon left>{{ icon }}</v-icon
+      >{{ title }}</v-card-title
+    >
+    <v-card-text>
+      <p>ທົ່ວໂລກ: {{ overall | numFormat }}</p>
+      <p>ປະເທດລາວ: {{ laos | numFormat }}</p>
+    </v-card-text>
+  </v-card>
 </template>
 <script>
 export default {
   name: "SummaryCard",
   props: {
-    type: String,
+    title: String,
+    color: String,
     icon: String,
     overall: Number,
-    laos: Number
+    laos: Number,
+    dark: {
+      type: Boolean,
+      default: false
+    }
   }
 };
 </script>
