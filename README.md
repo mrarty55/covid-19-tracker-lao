@@ -6,7 +6,7 @@ COVID-19 Tracker in Lao language
 
 This is a personal project that I built as a hobby during COVID-19 pandemic. You can try building yourself one!
 
-Built with Vue.js & Buefy, Vue components based on Bulma.
+It was first built with Vue.js & Buefy, components library for Vue based on Bulma. Later, I replaced Buefy with Vuetify.
 
 ## Project setup
 
@@ -25,6 +25,22 @@ yarn serve
 ```bash
 yarn build
 ```
+
+### Analyse Webpack bundle
+
+It automatically run the analyser after building. To disable the analyser, add following command into `vue.config.js`.
+
+```js
+module.exports = {
+  pluginOptions: {
+    webpackBundleAnalyzer: {
+      openAnalyzer: false
+    }
+  }
+};
+```
+
+For more information, please visit its [documentation](https://github.com/mrbbot/vue-cli-plugin-webpack-bundle-analyzer).
 
 ### Lints and fixes files
 
