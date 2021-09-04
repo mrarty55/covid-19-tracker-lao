@@ -38,7 +38,7 @@
       </v-col>
       <v-col :cols="cols">
         <summary-card
-          title="ຮັກສາແລ້ວ"
+          title="ປິ່ນປົວແລ້ວ"
           color="green"
           icon="fas fa-smile"
           :dark="true"
@@ -211,12 +211,12 @@ export default {
           value: "todayDeaths"
         },
         {
-          text: "ຮັກສາແລ້ວ",
+          text: "ປີ່ນປົວແລ້ວ",
           sortable: true,
           value: "recovered"
         },
         {
-          text: "ກໍາລັງຮັກສາ",
+          text: "ກໍາລັງປິ່ນປົວ",
           sortable: true,
           value: "active"
         }
