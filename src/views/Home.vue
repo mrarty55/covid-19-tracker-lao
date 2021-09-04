@@ -53,7 +53,9 @@
       :items="allCountries"
       :items-per-page="25"
       :search="searchText"
-      :footer-props="{ 'items-per-page-options': itemsPerPageOptions }"
+      sort-by="cases"
+      :sort-desc="true"
+      :footer-props="footerProps"
       class="my-4"
     >
       <template #top>
@@ -63,9 +65,6 @@
           label="ຄົ້ນຫາປະເທດ (ພາສາອັງກິດເທົ່ານັ້ນ)"
         />
       </template>
-      <template #[`item.countryInfo`]="{ value }">
-        <span><v-img :src="value.flag" :alt="value.iso3" width="50%"/></span
-      ></template>
       <template #[`item.cases`]="{ value }"
         ><span>{{ value | numFormat }}</span></template
       >
@@ -84,6 +83,11 @@
       <template #[`item.recovered`]="{ value }"
         ><span>{{ value | numFormat }}</span></template
       >
+      <template #[`footer.page-text`]="props">
+        <span>{{
+          `ລາຍການທີ ${props.pageStart}-${props.pageStop} ຈາກທັງໝົດ ${props.itemsLength} ລາຍການ`
+        }}</span>
+      </template>
     </v-data-table>
   </v-container>
 </template>
@@ -178,13 +182,12 @@ export default {
       laos: {},
       overall: {},
       searchText: "",
-      itemsPerPageOptions: [25, 50, 75, 100, -1],
+      footerProps: {
+        "items-per-page-text": "ຈໍານວນລາຍການ",
+        "items-per-page-all-text": "ທັງໝົດ",
+        "items-per-page-options": [25, 50, 75, 100, -1]
+      },
       tableHeaders: [
-        {
-          text: "",
-          value: "countryInfo",
-          width: "10"
-        },
         {
           text: "ປະເທດ",
           sortable: true,
