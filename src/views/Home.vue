@@ -239,19 +239,19 @@ export default {
   },
   methods: {
     getLaosData() {
-      this.$http.get("/covid-19/countries/laos").then(res => {
-        this.laos = res.data;
-      });
+      fetch(`${this.$apiUrl}/covid-19/countries/laos`)
+        .then(res => res.json())
+        .then(data => (this.laos = data));
     },
     getOverallData() {
-      this.$http.get("/covid-19/all").then(res => {
-        this.overall = res.data;
-      });
+      fetch(`${this.$apiUrl}/covid-19/all`)
+        .then(res => res.json())
+        .then(data => (this.overall = data));
     },
     getAllCountriesData() {
-      this.$http.get("/covid-19/countries").then(res => {
-        this.allCountries = res.data;
-      });
+      fetch(`${this.$apiUrl}/covid-19/countries`)
+        .then(res => res.json())
+        .then(data => (this.allCountries = data));
     }
   }
 };
