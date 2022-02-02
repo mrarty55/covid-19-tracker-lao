@@ -11,7 +11,7 @@
 export default {
   name: "NotFound",
   metaInfo: {
-    title: "ບໍ່ໍພົບເຫັນ",
+    title: "404",
     meta: [
       {
         name: "title",
