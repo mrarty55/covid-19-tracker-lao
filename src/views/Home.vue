@@ -8,12 +8,7 @@
           >disease.sh</a
         >
       </p>
-      <p>
-        ອັບເດດຂໍ້ມູນຫຼ້າສຸດເມື່ອ
-        {{ laos.updated | moment("DD MMM YYYY") }}
-        ເວລາ {{ laos.updated | moment("HH:mm:ss") }}
-      </p></v-col
-    >
+    </v-col>
     <v-divider />
     <v-row class="my-4">
       <v-col :cols="cols">
