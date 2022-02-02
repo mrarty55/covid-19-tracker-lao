@@ -1,5 +1,5 @@
 <template>
-  <v-footer app absolute>
+  <v-footer app absolute dark>
     <v-col class="text-center" cols="12">
       <p>
         {{ year }} © COVID-19 Tracking Website. Built by Philaphonh Inthavongsa
